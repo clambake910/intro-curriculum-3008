@@ -42,7 +42,8 @@ app.message(/^list/i, ({ context, say }) => {
   if (list.length === 0) {
     say('（TODO はありません）');
   } else {
-    say(todo.list().join('\n'));
+    console.log()
+    say(list.map(x => "・" + x).join('\n'));
   }
 });
 
@@ -51,7 +52,7 @@ app.message(/donelist/i, ({ context, say }) => {
   if (list.length === 0) {
     say('（完了した TODO はありません）');
   } else {
-    say(todo.donelist().join('\n'));
+    say(list.join('\n'));
   }
 });
 
